@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form_widget(form) }}
+    <input type="submit" name="submit" />
+</form>
+
+<textarea cols="120" rows="20">
+{{ ipn_request }}
+</textarea>
+
+<textarea cols="120" rows="40">
+{{ ipn_response }}
+</textarea>
+
+{% endblock %}
