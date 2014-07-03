@@ -68,7 +68,7 @@ $app->post('/', function (Request $request) use ($app) {
         $client     = new Client();
         $data       = $form->getData();
         $ipnRequest = $client->createRequest('POST', $data['notificationUrl'], array(
-            'body' => array(
+            'json' => array(
                 'id'             => $data['id'],
                 'url'            => $data['url'],
                 'status'         => $data['status'],
@@ -79,7 +79,7 @@ $app->post('/', function (Request $request) use ($app) {
                 'invoiceTime'    => $data['invoiceTime'],
                 'expirationTime' => $data['expirationTime'],
                 'currentTime'    => $data['currentTime'],
-            )
+            ),
         ));
         $ipnResponse = $client->send($ipnRequest);
     }
