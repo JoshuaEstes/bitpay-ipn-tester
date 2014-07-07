@@ -59,6 +59,9 @@ function getIpnForm(\Silex\Application $app)
         ->add('currentTime', 'text', array(
             'required' => false,
         ))
+        ->add('btcPaid', 'text', array(
+            'required' => false,
+        ))
         ->getForm();
 }
 
@@ -95,9 +98,14 @@ $app->post('/', function (Request $request) use ($app) {
                 'invoiceTime'    => $data['invoiceTime'],
                 'expirationTime' => $data['expirationTime'],
                 'currentTime'    => $data['currentTime'],
+                'btcPaid'        => $data['btcPaid'],
             ),
         ));
-        $ipnResponse = $client->send($ipnRequest);
+        try {
+            $ipnResponse = $client->send($ipnRequest);
+        } catch (\Exception $e) {
+            $ipnResponse = $e->getResponse();
+        }
     }
 
     return $app['twig']->render(
