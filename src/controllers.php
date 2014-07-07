@@ -11,15 +11,19 @@ function getIpnForm(\Silex\Application $app)
 {
     return $app['form.factory']->createBuilder('form', array())
         ->add('notificationUrl', 'url', array(
+            'required' => true,
             'attr' => array('size' => '255')
         ))
         ->add('id', 'text', array(
+            'required' => false,
             'attr' => array('size' => '64')
         ))
         ->add('url', 'url', array(
+            'required' => false,
             'attr' => array('size' => '64')
         ))
         ->add('status', 'choice', array(
+            'required' => false,
             'choices' => array(
                 'new'       => 'new',
                 'paid'      => 'paid',
@@ -30,19 +34,31 @@ function getIpnForm(\Silex\Application $app)
             ),
         ))
         ->add('posData', 'textarea', array(
+            'required' => false,
             'attr' => array('cols' => '60', 'rows' => '6')
         ))
-        ->add('price', 'text')
-        ->add('btcPrice', 'text')
+        ->add('price', 'text', array(
+            'required' => false,
+        ))
+        ->add('btcPrice', 'text', array(
+            'required' => false,
+        ))
         ->add('currency', 'choice', array(
+            'required' => false,
             'choices' => array(
                 'BTC' => 'BTC',
                 'USD' => 'USD',
             ),
         ))
-        ->add('invoiceTime', 'text')
-        ->add('expirationTime', 'text')
-        ->add('currentTime', 'text')
+        ->add('invoiceTime', 'text', array(
+            'required' => false,
+        ))
+        ->add('expirationTime', 'text', array(
+            'required' => false,
+        ))
+        ->add('currentTime', 'text', array(
+            'required' => false,
+        ))
         ->getForm();
 }
 
