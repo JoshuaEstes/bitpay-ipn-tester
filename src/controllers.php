@@ -10,13 +10,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 function getIpnForm(\Silex\Application $app)
 {
     return $app['form.factory']->createBuilder('form', array())
-        ->add('notificationUrl', 'text', array(
+        ->add('notificationUrl', 'url', array(
             'attr' => array('size' => '255')
         ))
         ->add('id', 'text', array(
             'attr' => array('size' => '64')
         ))
-        ->add('url', 'text', array(
+        ->add('url', 'url', array(
             'attr' => array('size' => '64')
         ))
         ->add('status', 'choice', array(
