@@ -4,6 +4,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
+        "fzaninotto/faker": "*",
         "guzzlehttp/guzzle": "4.*",
         "php": ">=5.3.3",
         "silex/silex": "~1.0",

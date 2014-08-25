@@ -123,6 +123,8 @@ $app->post('/', function (Request $request) use ($app) {
  */
 $app->post('/ipn', function (Request $request) use ($app) {
     $app['monolog']->addDebug($request);
+
+    return new Response();
 })->bind('ipn');
 
 $app->error(function (\Exception $e, $code) use ($app) {

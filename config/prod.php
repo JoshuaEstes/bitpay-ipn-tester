@@ -19,3 +19,5 @@ $app->register(new \Silex\Provider\TranslationServiceProvider(), array(
 $app->register(new \Silex\Provider\MonologServiceProvider(), array(
     'monolog.logfile' => __DIR__.'/../var/logs/silex_prod.log',
 ));
+
+$app['notificationURL'] = 'http://swift-balloon-2211.vagrantshare.com/index_dev.php/ipn';
