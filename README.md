@@ -9,7 +9,7 @@ This repository is used to test IPNs.
 git clone https://github.com/JoshuaEstes/bitpay-ipn-tester.git
 cd bitpay-ipn-tester
 curl -s https://getcomposer.org/installer | php
-composer.phar install
+php ./composer.phar install
 vagrant up
 ```
 
