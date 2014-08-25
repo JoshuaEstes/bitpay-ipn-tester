@@ -10,7 +10,6 @@ git clone https://github.com/JoshuaEstes/bitpay-ipn-tester.git
 cd bitpay-ipn-tester
 curl -s https://getcomposer.org/installer | php
 composer.phar install
-git remote add -f bitpay-php-client https://github.com/bitpay/php-client.git
 vagrant up
 ```
 
