@@ -15,3 +15,7 @@ $app->register(new \Silex\Provider\ValidatorServiceProvider());
 $app->register(new \Silex\Provider\TranslationServiceProvider(), array(
     'translator.domains' => array(),
 ));
+
+$app->register(new \Silex\Provider\MonologServiceProvider(), array(
+    'monolog.logfile' => __DIR__.'/../var/logs/silex_prod.log',
+));

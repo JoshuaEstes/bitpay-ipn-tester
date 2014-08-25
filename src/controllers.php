@@ -118,6 +118,13 @@ $app->post('/', function (Request $request) use ($app) {
     );
 })->bind('send_ipn');
 
+/**
+ * Used to test incoming IPN Requests
+ */
+$app->post('/ipn', function (Request $request) use ($app) {
+    $app['monolog']->addDebug($request);
+})->bind('ipn');
+
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {
         return;
