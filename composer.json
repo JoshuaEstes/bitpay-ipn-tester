@@ -26,6 +26,9 @@
         "symfony/twig-bridge": "~2.3",
         "symfony/validator": "~2.3"
     },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    },
     "autoload": {
         "psr-0": { "": "src/" }
     },
